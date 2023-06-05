@@ -2,34 +2,38 @@ import java.util.HashMap;
 
 public class Main {
     public static void main(String[] args) {
-        // databaza spz
-        // do databazy priradime skratku okresu a nazov okresu
-        // chceme vyhladavat podla skratky okresu
+        // Databaza spz
+        // Do databazy priradime skratku okresu a nazov okresu
+        // Chceme vyhladavat podla skratky okresu
         HashMap<String, String> spz = new HashMap<String, String>();
         spz.put("BB", "Banská Bystrica");
         spz.put("BA", "Bratislava");
         spz.put("ZA", "Žilina");
-        System.out.println(spz.get("ZA")); // vypise Zilina
+        System.out.println("Nájdené mesto podľa skratky ZA" + spz.get("ZA")); // vypise Zilina
+        //spz.remove("BB"); // Odstranenie hodnoty s klucom BB
+        //System.out.println("Nájdené mesto podľa skratky BB" + spz.get("ZA")); // problem, BB neexistuje
 
-        // vypiseme vsetky hodnoty z HashMap-u spz
+        System.out.println("\nVšetky hodnoty (values), teda mestá");
+        System.out.println("--------------------------");
+        // Vypiseme vsetky hodnoty z HashMap-u spz
         for(String mesto: spz.values()) {
             System.out.println(mesto);
         }
 
-        // vypiseme vsetky "kluce" z HashMap-u spz
+        System.out.println("\nVšetky skratky (kľúče)");
+        System.out.println("--------------------------");
+        // Vypiseme vsetky "kluce" z HashMap-u spz
         for(String skratka: spz.keySet()) {
             System.out.println(skratka);
         }
 
 
-        System.out.println("\n\n");
-
-
-        HashMap<Integer, String> psc = new HashMap<Integer, String>();
-        psc.put(97411, "Banská Bystrica");
-        psc.put(05201, "Spišská Nová Ves");
-
-        System.out.println(psc.get(05201));
+        System.out.println("\nVšetky skratky (kľúče) a aj hodnoty");
+        System.out.println("--------------------------");
+        // Vypiseme aj kluce, aj hodnoty
+        for (String skratka : spz.keySet()) {
+            System.out.println("kľúč: " + skratka + ", hodnota: " + spz.get(skratka));
+        }
 
 
     }
