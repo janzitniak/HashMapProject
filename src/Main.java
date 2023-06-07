@@ -5,13 +5,20 @@ public class Main {
         // Databaza spz
         // Do databazy priradime skratku okresu a nazov okresu
         // Chceme vyhladavat podla skratky okresu
-        HashMap<String, String> spz = new HashMap<String, String>();
+        HashMap<String, String> spz = new HashMap<>();
         spz.put("BB", "Banská Bystrica");
         spz.put("BA", "Bratislava");
         spz.put("ZA", "Žilina");
-        System.out.println("Nájdené mesto podľa skratky ZA" + spz.get("ZA")); // vypise Zilina
-        //spz.remove("BB"); // Odstranenie hodnoty s klucom BB
-        //System.out.println("Nájdené mesto podľa skratky BB" + spz.get("ZA")); // problem, BB neexistuje
+        spz.put("ZA", "Bytča");
+
+        System.out.println("Počet záznamov: " + spz.size());
+
+        System.out.println("Nájdené mesto podľa skratky ZA: " + spz.get("ZA")); // vypise Zilina
+        spz.remove("BB"); // Odstranenie hodnoty s klucom BB
+        System.out.println("Nájdené mesto podľa skratky BB: " + spz.get("BB")); // problem, BB neexistuje, teda null
+
+        System.out.println("Počet záznamov po VYMAZANÍ: " + spz.size());
+
 
         System.out.println("\nVšetky hodnoty (values), teda mestá");
         System.out.println("--------------------------");
